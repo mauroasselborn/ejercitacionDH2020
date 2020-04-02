@@ -1,10 +1,7 @@
-let numero = process.argv[2];
-let numeroInvertido = "";
-console.clear();
-
-for (let i = numero.length - 1; i >= 0; i--) {
-    numeroInvertido += numero[i];
-}
+let numero = Array.from(process.argv[2]).join("");
+let numeroInvertido = Array.from(numero)
+    .reverse()
+    .join("");
 
 if (numero === numeroInvertido) {
     console.log(
