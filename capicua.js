@@ -1,4 +1,4 @@
-let numero = Array.from(process.argv[2]).join("");
+let numero = process.argv[2];
 let numeroInvertido = Array.from(numero)
     .reverse()
     .join("");
