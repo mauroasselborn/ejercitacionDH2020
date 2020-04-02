@@ -10,12 +10,18 @@ module.exports.crearArchivo = () => {
         nombreArchivo: "archivo.txt",
         textoArchivo: "texto de relleno por default"
     };
-    // guardo en una constante el archivo creado
-    const archivo = fs.createWriteStream(
-        nombreArchivo || opcPorDefecto.nombreArchivo
-    );
-    //escribo en el archivo lo que recibo por parametros
-    archivo.write(textoArchivo || opcPorDefecto.textoArchivo);
+    
+    //Escribo el archivo!!!
+    fs.writeFileSync(nombreArchivo || opcPorDefecto.nombreArchivo, textoArchivo || opcPorDefecto.textoArchivo);
+    
+   /*   //Opcion 2 que me parecio mas prolija
+        // guardo en una constante el archivo creado
+        const archivo = fs.createWriteStream(
+            nombreArchivo || opcPorDefecto.nombreArchivo
+        );
+        //escribo en el archivo lo que recibo por parametros
+        archivo.write(textoArchivo || opcPorDefecto.textoArchivo);
+    */
 };
 
 //opcional antes de que me retes jajaja
