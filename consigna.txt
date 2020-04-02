@@ -1,7 +1,7 @@
-Buenas chiques!
+Buenas chicos!
 Para quienes terminaron los ejercicios y estén aburridos, acá es dejo algunos desafíos:
 1- Hacer un programa que cree un archivo con un texto ingresado por la terminal. Pueden ingresar el nombre del archivo por linea de comandaos si desean extender funcionalidad (opcional).
 2- Modularizar el punto 1 para que las tareas estén repartidas en archivos distintos
 3- Investigar que es NODEMON y como utilizarlo en NodeJS
-4- Hacer un programa para saber si el numero ingresado por terminal es capicúa :lengua_fuera:
+4- Hacer un programa para saber si el numero ingresado por terminal es capicúa
 Diviértanse.
