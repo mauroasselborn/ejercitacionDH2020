@@ -4,6 +4,7 @@ module.exports.rutas = (req) => {
     let seccion;
     switch (req.url) {
         case "/":
+        case "/home":
             seccion = secciones.homePage;
             break;
         case "/en-cartelera":
@@ -18,7 +19,7 @@ module.exports.rutas = (req) => {
         case "/contacto":
             seccion = secciones.contacto;
             break;
-        case "/preguntas-frecuentes;":
+        case "/preguntas-frecuentes":
             seccion = secciones.preguntasFrecuentes;
             break;
         default:
