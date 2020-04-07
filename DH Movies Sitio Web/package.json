@@ -1,22 +1,23 @@
 {
-  "name": "dh-movies.ejercicio",
-  "version": "1.0.0",
-  "description": "Ejercicio para creacion de server con node y modulo http para practica del dia 06-04-2020 en DH",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bugen86/ejercitacionDH2020.git"
-  },
-  "author": "Mauro Asselborn",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/bugen86/ejercitacionDH2020/issues"
-  },
-  "homepage": "https://github.com/bugen86/ejercitacionDH2020#readme",
-  "devDependencies": {
-    "nodemon": "^2.0.2"
-  }
+    "name": "dh-movies.ejercicio",
+    "version": "1.0.0",
+    "description": "Ejercicio para creacion de server con node y modulo http para practica del dia 06-04-2020 en DH",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bugen86/ejercitacionDH2020.git"
+    },
+    "author": "Mauro Asselborn",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/bugen86/ejercitacionDH2020/issues"
+    },
+    "homepage": "https://github.com/bugen86/ejercitacionDH2020#readme",
+    "devDependencies": {
+        "nodemon": "^2.0.2"
+    }
 }
