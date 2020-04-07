@@ -19,19 +19,20 @@ for (const pelicula in archivoPeliculas.movies) {
     <li>
         ${archivoPeliculas.movies[pelicula].title}<br/>
         ${archivoPeliculas.movies[pelicula].overview}
-    </li>
+    </li><br/>
     `;
 }
 
 contenidoWeb += `</ol><hr>
 <p>
     Recordá que podés visitar las secciones:
-    <ul>
-        <li style="display:inline-block; margin-right: 50px;list-style:none">En Cartelera</li>
-        <li style="display:inline-block; margin-right: 50px;list-style:none">Más Votadas</li>
-        <li style="display:inline-block; margin-right: 50px;list-style:none">Sucursales</li>
-        <li style="display:inline-block; margin-right: 50px;list-style:none">Contacto</li>
-        <li style="display:inline-block; margin-right: 50px;list-style:none">Preguntas Frecuentes</li>
+   <ul>
+        <li style="display:inline-block; margin-right: 50px;list-style:none"><a href="/">Home</a></li>
+        <li style="display:inline-block; margin-right: 50px;list-style:none"><a href="en-cartelera">En Cartelera</a></li>
+        <li style="display:inline-block; margin-right: 50px;list-style:none"><a href="mas-votadas">Más Votadas</a></li>
+        <li style="display:inline-block; margin-right: 50px;list-style:none"><a href="sucursales">Sucursales</a></li>
+        <li style="display:inline-block; margin-right: 50px;list-style:none"><a href="contacto">Contacto</a></li>
+        <li style="display:inline-block; margin-right: 50px;list-style:none"><a href="preguntas-frecuentes">Preguntas Frecuentes</a></li>
     </ul>
 </p>`;
 
