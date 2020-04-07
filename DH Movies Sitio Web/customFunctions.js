@@ -11,9 +11,3 @@ module.exports = {
     getFaqs: getFaqs,
     getTheaters: getTheaters,
 };
-
-/* for (const key in getMovies.movies) {
-    console.log(getMovies.movies[key].original_title);
-    console.log(getMovies.movies[key].vote_average);
-}
- */
