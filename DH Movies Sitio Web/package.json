@@ -17,7 +17,5 @@
         "url": "https://github.com/bugen86/ejercitacionDH2020/issues"
     },
     "homepage": "https://github.com/bugen86/ejercitacionDH2020#readme",
-    "devDependencies": {
-        "nodemon": "^2.0.2"
-    }
+    "devDependencies": {}
 }
