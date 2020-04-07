@@ -1,0 +1,22 @@
+{
+  "name": "dh-movies-ejercicio-ver-expressjs",
+  "version": "1.0.0",
+  "description": "Replicando eejercicio pero utilizando ExpressJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bugen86/ejercitacionDH2020.git"
+  },
+  "author": "Mauro Asselborn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bugen86/ejercitacionDH2020/issues"
+  },
+  "homepage": "https://github.com/bugen86/ejercitacionDH2020#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
