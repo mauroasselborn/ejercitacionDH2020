@@ -1,11 +1,10 @@
-const http = require("http");
-const router = require("./router");
+const express = require("express")
 
-const server = http.createServer((req, res) => {
-    res.writeHead(200, { "contentType": "text/plain" });
-    res.end(router.rutas(req));
-});
+const app = express()
+const router = express.Router()
 
-server.listen(3030, "localhost", () => {
-    console.log("servercorriendo correctamente en el puerto 3030");
-});
+// view engine setup
+app.set("views", path.join(__dirname, "views"))
+app.set("view engine", "ejs")
+
+module.exports = app
