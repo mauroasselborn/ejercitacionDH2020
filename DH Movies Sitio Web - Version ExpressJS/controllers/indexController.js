@@ -1,10 +1,12 @@
-const movies = require("../funcLecturaJSON")
-
-const peliculas = movies.getMovies()
+const fs = require("fs")
+const path = require("path")
 
 const indexController = {
-	index: (req, res) => {
-		res.render("index", { pelis: peliculas.movies, titulo: "Bienvenidos" })
+	mostrar: (req, res) => {
+		const movies = JSON.parse(fs.readFileSync(path.join(__dirname, "../data/movies.json")))
+
+		let param = Number(req.params.id)
+		res.render("index", movies.movies[param])
 	},
 }
 

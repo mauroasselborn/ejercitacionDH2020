@@ -4,15 +4,13 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<%- include ('links.ejs') %>
-		<title><%= titulo %></title>
+		<title>Listando</title>
 	</head>
 	<body>
-		<%- include ('header.ejs') %>
-		<ul>
-			<% for( let i = 0; i < pelis.length; i++ ) { %>
-			<li><%= pelis[i].title %></li>
-			<li><%= pelis[i].overview %></li>
-			<% } %>
+		<%- include ('header') %>
+		<ul class="container">
+			<li><%= title %></li>
+			<li><%= overview %></li>
 		</ul>
 	</body>
 </html>
