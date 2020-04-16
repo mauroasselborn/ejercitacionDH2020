@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<%- include('head') -%>
+		<title>Document</title>
+	</head>
+	<body>
+		<%- include('header') -%> 
+		
+		<% for(let i of fileHeroes){ %>
+			<li id="heroes">
+				<%= `id:		${i.id}` %> <br> 
+				<%= `Nombre:	${i.nombre}` %> <br>
+				<%= `Profesión:	${i.profesion}` %> <br>
+				<%= `Pais:		${i.pais}` %> <br>
+				<%= `Reseña:	${i.resenia}` %> <br><br>
+			</li>
+		<% } %>
+	</body>
+</html>

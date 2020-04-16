@@ -1,0 +1,56 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	background-color: cornsilk;
+}
+
+.titulo {
+	width: 167px;
+	margin: 0 auto;
+	border-bottom: dotted black;
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
+
+.container {
+	width: 75%;
+	margin: auto;
+}
+
+#mensajeHome {
+}
+
+header {
+	width: 100%;
+	background-color: blue;
+}
+
+header nav ul {
+	color: white;
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+}
+
+ul li {
+	width: 80px;
+	margin: 20px;
+	padding: 10px;
+	list-style: none;
+	background-color: black;
+	text-align: center;
+	border-radius: 5px;
+}
+
+ul li a {
+	color: white;
+	font-size: 20px;
+	text-decoration: none;
+}
+
+#heroes {
+	margin: 20px;
+}
