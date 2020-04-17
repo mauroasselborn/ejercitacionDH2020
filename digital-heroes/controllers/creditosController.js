@@ -1,6 +1,6 @@
 const creditosController = {
 	index: (req, res) => {
-		res.send("Hecho por Mauro Asselbor")
+		res.render("creditos")
 	},
 }
 
