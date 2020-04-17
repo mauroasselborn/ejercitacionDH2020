@@ -1,8 +1,6 @@
-#  **BeerStore** 
+#  **Practicas DH 2020 Desarrollo Web Full Stack** 
 
-## \***_Proyecto Integrador Digital House Diseño Web FullStack 2020_**\*
-
-# **Integrantes del proyecto**
+# **Integrantes de las Prácticas**
 
 ```javascript
 function Integrante(nombre, apellido, email) {
@@ -22,9 +20,9 @@ C:\BeerStore>
 
 ---
 
-# **Descripción del Sitio** 
+# **Descripción del Repo** 
 
-_"En "Beer Store", somos una empresa destinada a la venta de cervezas premium online. Con el fin de satisfacer a nuestros clientes y que disfruten de una experiencia única con una impronta y estilo de cada bebida, sin tener que moverte de su casa."_
+_"Este es un Repositorio personal público donde subo todas las prácticas relevantes que realizo en el curso de Desarrollo Web Full Satck impartido por Digital House"_
 
 
 ## **Comandos para disfrutar de este proyecto**
