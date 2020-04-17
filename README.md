@@ -28,7 +28,7 @@ _"Este es un Repositorio personal público donde subo todas las prácticas relev
 ## **Comandos para disfrutar de este proyecto**
 
 ```sh
-- git clone https://github.com/Digital-House-Programming/Nordelta-Team-3.git
+- git clone https://github.com/bugen86/ejercitacionDH2020.git
 - cd Nordelta-Team-3
 - npm install
 - npm start
