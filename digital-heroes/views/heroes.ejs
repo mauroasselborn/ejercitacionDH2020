@@ -2,21 +2,64 @@
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 		<%- include('head') -%>
-		<title>Document</title>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+		<title><%= titulo  %> </title>
 	</head>
 	<body>
 		<%- include('header') -%> 
 		
-		<% for(let i of fileHeroes){ %>
-			<li id="heroes">
-				<%= `id:		${i.id}` %> <br> 
-				<%= `Nombre:	${i.nombre}` %> <br>
-				<%= `Profesión:	${i.profesion}` %> <br>
-				<%= `Pais:		${i.pais}` %> <br>
-				<%= `Reseña:	${i.resenia}` %> <br><br>
-			</li>
-		<% } %>
+		<% if (mostrar == 1) { %>
+			<% for(let i of fileHeroes){ %>
+				<li id="heroes">
+					<%= `id:		${i.id}` %> <br> 
+					<%= `Nombre:	${i.nombre}` %> <br>
+					<%= `Profesión:	${i.profesion}` %> <br>
+					<%= `Pais:		${i.pais}` %> <br>
+					<%= `Reseña:	${i.resenia}` %> <br><br>
+				</li>
+			<% } %>
+		<% }else if(mostrar == 2){ %>
+			<h2>
+				<br><br>
+				<%= texto %> 
+				<br><br>
+			</h2>
+			<input id="id1" type="text" placeholder="Ingrese un ID">
+			<a class="boton" href="#">Ver Detalles</a>
+			
+			<script>
+				
+				let id1 = document.getElementById('id1')
+				let boton = document.querySelectorAll('.boton')
+					
+				boton[0].addEventListener('click',()=>{boton[0].href = `/heroes/detalle/${id1.value || 1}`})
+			</script>
+				
+				 
+		<% }else{ %> 
+			<h2>
+				<br><br>
+				<%= texto %> 
+				<br><br>
+			</h2>
+				<input id="id2" type="text" placeholder="Ingrese un ID para la bio">
+				<a class="boton" href="#">Ver Bio</a>
+				<br>
+				<label for="ok">Desea Ver su Reseña?</label>
+				<input type="checkbox" value="ok" id="ok" name="ok">
+				<script>
+					let id2 = document.getElementById('id2')
+					let boton = document.querySelectorAll('.boton')
+					let cbox = document.getElementById('ok')
+
+					boton[0].addEventListener('click',()=>{
+						boton[0].href = !cbox.checked ? `/heroes/bio/${id2.value || 1}` : `/heroes/bio/${id2.value || 1}/${cbox.value}`
+					})
+				</script>
+				
+				
+		<% } %> 
 	</body>
 </html>

@@ -4,31 +4,38 @@ const fileHeroes = JSON.parse(fs.readFileSync(path.join(__dirname, "../data/hero
 
 const heroesController = {
 	index: (req, res) => {
-		const config = {
-			titulo: "Heroes",
-			fileHeroes,
-		}
-
-		res.render("heroes", config)
+		res.render("heroes", { fileHeroes, mostrar: 1, titulo: "Heroes" })
 	},
 	mostrarDetalles: (req, res) => {
-		const id = Number(req.params.id)
+		const id = Number(req.params.id) //|| 1
+		let texto = ""
+
+		if (id > 0 && id <= fileHeroes.length) {
+			const heroe = fileHeroes.find((heroe) => heroe.id === id) //|| 1
+
+			texto = `"Hola, mi nombre es ${heroe.nombre} y soy ${heroe.profesion}".​`
+		} else {
+			texto = `"No se encontró el id: ${id}"`
+		}
+		res.render("heroes", { texto, mostrar: 2, titulo: "Detalles Heroes" })
+	},
+	mostrarBio: (req, res) => {
+		const id = Number(req.params.id) //|| 1
 		const ok = req.params.ok
 		let texto = ""
 
 		if (id > 0 && id <= fileHeroes.length) {
-			for (let i = 0; i < fileHeroes.length; i++) {
-				if (fileHeroes[i].id == id) {
-					texto = `"Hola, mi nombre es ${fileHeroes[i].nombre} y soy ${fileHeroes[i].profesion}".​<br>`
-					if (ok) {
-						texto += `Reseña: ${fileHeroes[i].resenia}`
-					} else texto += `"Lamento que no desees saber más de mi :(".<br>`
-				}
+			const heroe = fileHeroes.find((heroe) => heroe.id === id) // || 1
+			if (ok === "ok") {
+				texto = `Nombre: ${heroe.nombre}`
+				texto += ` - Reseña: ${heroe.resenia}`
+			} else {
+				texto = `Nombre: ${heroe.nombre}, "Lamento que no desees saber más de mi :(".`
 			}
 		} else {
-			texto = `"No encontramosun héroe para mostrarte su biografía"`
+			texto = `No encontramosun héroe para mostrarte su biografía`
 		}
-		res.send(texto)
+		res.render("heroes", { texto, mostrar: 3, titulo: "Biografía Heroes" })
 	},
 }
 
