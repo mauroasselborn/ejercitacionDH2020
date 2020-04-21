@@ -1,0 +1,32 @@
+* {
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap");
+
+body {
+	font-family: "Work Sans", sans-serif;
+}
+
+header {
+	margin-right: 50px;
+}
+.icon-redes li i {
+	color: #666;
+}
+
+.icon-redes li {
+	display: inline-block;
+}
+
+.mayuscula {
+	text-transform: uppercase;
+}
+
+.menu li {
+	line-height: 30px;
+}
