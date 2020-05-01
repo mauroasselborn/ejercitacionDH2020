@@ -1,0 +1,53 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url("../images/bg-body.png");
+}
+
+.logo {
+	border-radius: 50%;
+}
+
+.photo-container {
+	position: relative;
+	width: 100vw;
+}
+
+.photo {
+	width: 100%;
+}
+
+.special {
+	position: absolute;
+	right: 20px;
+	top: 0;
+	width: 100px;
+}
+
+.more {
+	padding: 10px;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+	text-decoration: none;
+}
+.main-footer {
+	width: 100vw;
+	height: 10vh;
+	background-color: tomato;
+	border-radius: 50px 50px 0 0;
+	vertical-align: center;
+}
+.main-footer ul {
+	margin: auto;
+}
+.main-footer li {
+	display: inline-block;
+}
+
+.main-footer ul li a {
+	font-size: 40px;
+}

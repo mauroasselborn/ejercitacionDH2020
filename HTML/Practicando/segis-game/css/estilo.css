@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	overflow: hidden;
+	transition: 1s;
+	background-color: teal;
+	text-align: center;
+	margin: auto;
+}
+#foto {
+	border-radius: 30%;
+	z-index: 1;
+	width: 240px;
+	height: 240px;
+	position: fixed;
+	left: 40%;
+	top: 40%;
+	transition: all 0.2s;
+	display: none;
+}
+
+#botella {
+	position: fixed;
+	z-index: 1;
+	width: 140px;
+	cursor: none;
+	display: none;
+}
+
+#segundero {
+	position: fixed;
+	font-size: 150px;
+	font-family: "Bangers", cursive;
+	top: 10px;
+	left: 47vw;
+	z-index: 100;
+	display: none;
+}
+
+#dif-container {
+	position: fixed;
+	top: 10px;
+	right: 30px;
+	text-align: center;
+}
+
+#dif-container label,
+#dificultad {
+	display: inline-block;
+	font-family: "Bangers", cursive;
+	font-size: 20px;
+	margin: 5px;
+}
+
+#dificultad {
+	padding: 5px;
+}
+label {
+	font-size: 30px !important;
+}
+
+button {
+	background-color: blue;
+	border-radius: 5px;
+	font-size: 20px;
+	font-family: "Bangers", cursive;
+	text-align: center;
+	width: 110px;
+	color: white;
+	padding: 10px;
+	outline: none;
+}
+
+#harold {
+	display: block;
+	margin-top: 10%;
+	transition: all 0.5s;
+	visibility: hidden;
+	text-align: center;
+}
+
+#harold p {
+	font-family: "Bangers", cursive;
+	font-size: 70px;
+}
+
+#video {
+	display: none;
+}
+
+.harold-scale {
+	/* width: 100vw; */
+	animation: escalar 0.4s infinite alternate-reverse;
+}
+
+#success p {
+	font-family: "Bangers", cursive;
+	font-size: 70px;
+}
+
+#success {
+	display: none;
+	margin-top: 10%;
+	transition: all 0.5s;
+
+	text-align: center;
+	z-index: 100;
+}
+
+#success img {
+	border-radius: 50%;
+}
+
+@keyframes escalar {
+	0% {
+		transform: scale(0.5);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+/* @media (max-width: 600px) {
+	#harold p {
+		font-size: 50px;
+	}
+	#harold {
+		width: 50%;
+		margin: auto;
+		margin-top: 30%;
+	}
+
+	@keyframes escalar {
+		0% {
+			transform: scale(0.3);
+		}
+		100% {
+			transform: scale(0.5);
+		}
+	}
+
+	button {
+		padding: 5px;
+		font-size: 13px;
+	}
+} */

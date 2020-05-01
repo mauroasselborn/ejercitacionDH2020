@@ -4,9 +4,11 @@
 	text-decoration: none;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap");
 
 body {
 	font-family: "Work Sans", sans-serif;
@@ -29,4 +31,8 @@ header {
 
 .menu li {
 	line-height: 30px;
+}
+
+.menu li a {
+	color: black;
 }
