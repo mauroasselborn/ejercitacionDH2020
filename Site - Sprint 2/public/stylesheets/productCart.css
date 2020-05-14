@@ -1,41 +1,85 @@
-* {
-	/* outline: 1px solid red; */
+main {
+	margin-top: 20px;
 }
 
+/* --- HEADER --- */
+
 #carrito {
-	outline: 1px solid red;
 	display: flex;
 	flex-wrap: wrap;
+	border: 1px solid rgb(192, 192, 192);
+	background-color: white;
+	border-radius: 5px;
 }
+
+#header-cart {
+	border-bottom: 1px solid rgb(192, 192, 192);
+	width: 100%;
+	margin: 0px 10px;
+}
+
+#header-cart h2 {
+	margin: 15px 0px;
+}
+
+/* --- MAIN --- */
+
+#body-cart {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 10px 10px;
+	width: 100vw;
+	text-transform: capitalize;
+}
+
 #img-cart-container {
-	width: 80px;
+	/* border: 1px solid red; */
+	width: 20%;
 	height: 150px;
 	overflow: hidden;
 }
 
 #img-cart-container img {
-	outline: 1px solid red;
+	/* border: 1px solid red; */
 	display: block;
-	width: 100%;
+	width: 80px;
 	margin: auto;
 	height: auto;
 }
 
-#header-cart {
-	width: 100%;
-}
 #detalles-cart {
 	display: flex;
 }
-#header-cart h2 {
+
+#descripcion-cart {
+	/* border: 1px solid blue; */
+	margin-top: 30px;
+	margin-left: 20px;
+	display: block;
 }
 
-#body-cart {
-	width: 100%;
+#descripcion-cart h2 {
+	font-size: 1.3rem;
 }
 
-#footer-cart {
-	width: 100%;
+#counter {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	width: 90%;
+	height: 30px;
+	margin: 1px auto 10px auto;
+	text-transform: capitalize;
+}
+
+/* #counter button {
+	width: 20px;
+	height: 20px;
+	margin: 0px 10px;
+} */
+
+#precio-cart {
+	display: flex;
 }
 
 #sum-cart,
@@ -43,4 +87,74 @@
 	padding: 0;
 	width: 25px;
 	height: 25px;
+}
+#sum-cart {
+	margin-right: 10px;
+	margin-left: 10px;
+}
+#res-cart {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+/* --- FOOTER --- */
+
+#footer-cart {
+	margin: 20px 0px;
+	border-top: 1px solid rgb(235, 235, 235);
+	width: 90%;
+	margin: auto;
+	text-transform: capitalize;
+}
+
+.main-sumary {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 20px;
+	color: rgb(116, 116, 116);
+}
+
+.cantidad {
+	display: flex;
+	width: 100%;
+	height: 25px;
+}
+
+.precio-unidad {
+	width: 80%;
+	height: 30px;
+}
+
+.precio-unidad-valor {
+	display: flex;
+	justify-content: flex-end;
+	width: 20%;
+	height: 30px;
+}
+
+.main-footer {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 30px;
+	margin-top: 30px;
+	font-size: 1.4rem;
+}
+
+.total {
+	display: flex;
+	width: 50%;
+	height: 30px;
+}
+
+#precio-final-cart {
+	display: flex;
+	justify-content: flex-end;
+	width: 50%;
+	height: 30px;
+	font-weight: 200;
+}
+
+#footer-cart button {
+	margin: 20px 0px;
 }

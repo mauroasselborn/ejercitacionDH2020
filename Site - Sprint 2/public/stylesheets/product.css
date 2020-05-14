@@ -16,6 +16,7 @@
 
 .producto {
 	width: 400px;
+	min-height: 495px;
 	padding: 20px;
 	margin: 20px 20px;
 	background-color: #fff;
@@ -47,8 +48,18 @@
 }
 
 .producto-descripcion {
+	position: relative;
+	min-height: 275px;
 	text-align: center;
 	border-top: 1px solid rgba(146, 143, 148, 0.5);
+}
+
+.producto-descripcion > div {
+	width: 100%;
+	position: absolute;
+	bottom: 5px;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .producto-descripcion h2 {

@@ -51,7 +51,7 @@ body {
 }
 /*ACA VER ADMIN*/
 #admin-menu {
-	display: none;
+	display: block;
 }
 
 /*-------------*/
@@ -61,5 +61,8 @@ body {
 	}
 	.navbar-nav {
 		align-items: center;
+	}
+	#admin-menu .add-product {
+		margin-left: -50px;
 	}
 }
