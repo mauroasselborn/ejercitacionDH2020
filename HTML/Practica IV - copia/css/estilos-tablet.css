@@ -1,0 +1,8 @@
+.product {
+	float: left;
+}
+
+.vip-products {
+	border: 1px solid black;
+	overflow: hidden;
+}
