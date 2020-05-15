@@ -1,6 +1,6 @@
 const fs = require("fs")
 const path = require("path")
-const archivoProductos = JSON.parse(fs.readFileSync(path.join(__dirname, "../data/archivo.json"), "utf-8"))
+const archivoProductos = JSON.parse(fs.readFileSync(path.join(__dirname, "../data/productos.json"), "utf-8"))
 
 const productController = {
 	index: (req, res) => {
@@ -34,9 +34,9 @@ const productController = {
 		}
 		archivoProductos.push(literal)
 
-		fs.writeFileSync(path.join(__dirname, "../data/archivo.json"), JSON.stringify(archivoProductos))
+		fs.writeFileSync(path.join(__dirname, "../data/productos.json"), JSON.stringify(archivoProductos))
 
-		res.render("products", { archivoProductos })
+		res.redirect("/productos")
 	},
 }
 
