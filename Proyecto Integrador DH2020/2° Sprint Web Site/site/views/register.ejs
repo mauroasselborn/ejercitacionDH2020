@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Include con ejs de todo el codigo en comun del head -->
+		<%- include('./partials/head.ejs') %>
+		<link rel="stylesheet" href="/stylesheets/home.css" />
+		<title>Registro | BeerStore</title>
+	</head>
+
+	<body>
+		<!-- Include del header.ejs -->
+		<%- include('./partials/header.ejs') %>
+		<main class="container">
+			<h2 id="registrot" style="margin: 30px 0;">Registro</h2>
+			<form id="formRegister">
+				<div class="form-group">
+					<label for="inputName">Nombre Completo</label>
+					<input
+						type="text"
+						class="form-control"
+						id="inputName"
+						placeholder="Ezequiel Salomon"
+						required
+					/>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="inputEmail4">Email</label>
+						<input
+							type="email"
+							class="form-control"
+							id="inputEmail4"
+							required
+							placeholder="eze@salomon.com"
+						/>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="inputPassword4">Password</label>
+						<input
+							type="password"
+							class="form-control"
+							id="inputPassword4"
+							required
+							placeholder="12345"
+						/>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="inputAddress">Direccion</label>
+						<input
+							type="text"
+							class="form-control"
+							id="inputAddress"
+							placeholder="Av. Siempreviva 742"
+							required
+						/>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="inputDate">Fecha de Nacimiento</label>
+						<input type="date" class="form-control" id="inputDate" required />
+					</div>
+				</div>
+				<!-- <div class="row"> -->
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<label for="inputCity">Ciudad</label>
+						<input type="text" class="form-control" id="inputCity" required placeholder="Campana" />
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputState">Provincia</label>
+						<select id="inputState" class="form-control" required>
+							<option selected>Elegir...</option>
+							<option value="Buenos Aires">Bs. As.</option>
+							<option value="Catamarca">Catamarca</option>
+							<option value="Chaco">Chaco</option>
+							<option value="Chubut">Chubut</option>
+							<option value="Cordoba">Cordoba</option>
+							<option value="Corrientes">Corrientes</option>
+							<option value="Entre Rios">Entre Rios</option>
+							<option value="Formosa">Formosa</option>
+							<option value="Jujuy">Jujuy</option>
+							<option value="La Pampa">La Pampa</option>
+							<option value="La Rioja">La Rioja</option>
+							<option value="Mendoza">Mendoza</option>
+							<option value="Misiones">Misiones</option>
+							<option value="Neuquen">Neuquen</option>
+							<option value="Rio Negro">Rio Negro</option>
+							<option value="Salta">Salta</option>
+							<option value="San Juan">San Juan</option>
+							<option value="San Luis">San Luis</option>
+							<option value="Santa Cruz">Santa Cruz</option>
+							<option value="Santa Fe">Santa Fe</option>
+							<option value="Sgo. del Estero">Sgo. del Estero</option>
+							<option value="Tierra del Fuego">Tierra del Fuego</option>
+							<option value="Tucuman">Tucuman</option>
+						</select>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputZip">CP</label>
+						<input type="number" class="form-control" id="inputZip" required placeholder="2804" />
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<button type="submit" id="btnSubmit" class="btn btn-primary">Registrar</button>
+					</div>
+				</div>
+			</form>
+		</main>
+		<!-- Include del footer.ejs -->
+		<%- include('./partials/footer.ejs') %>
+		<script>
+			document.getElementById("formRegister").addEventListener("submit", graciasFunc)
+
+			function graciasFunc(e) {
+				let nombre = document.getElementById("inputName").value
+
+				location.href = "/registro/registro-correcto/" + nombre
+				e.preventDefault()
+			}
+		</script>
+		<%- include('./partials/jsIncludes.ejs') %>
+	</body>
+</html>

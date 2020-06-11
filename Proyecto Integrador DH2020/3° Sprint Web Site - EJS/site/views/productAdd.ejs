@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Include con ejs de todo el codigo en comun del head -->
+		<%- include('./partials/head.ejs') %>
+		<link rel="stylesheet" href="/stylesheets/productAdd.css" />
+		<title>Agregar Producto | BeerStore</title>
+	</head>
+
+	<body>
+		<!-- Include del header.ejs -->
+		<%- include('./partials/header.ejs', {nombre}) %>
+		<main class="container">
+			<h2 id="titulo-carga-producto">Carga de Producto</h2>
+
+			<form action="/products" method="POST" enctype="multipart/form-data">
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<label for="nombreProducto">Nombre del Producto</label>
+						<input
+							type="text"
+							id="nombrePorducto"
+							name="name"
+							class="form-control"
+							placeholder="Cerveza Negra..."
+							required
+						/>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="catProducto">Categoría</label>
+						<input
+							type="text"
+							id="catProducto"
+							name="category"
+							class="form-control"
+							placeholder="lata - botella..."
+							required
+						/>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="origenProducto">Origen</label>
+						<input
+							type="text"
+							id="origenProducto"
+							name="origen"
+							class="form-control"
+							placeholder="Alemania..."
+							required
+						/>
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-3 col-3">
+						<label for="gradAlProducto">% Alcohól</label>
+						<input
+							type="number"
+							id="gradAlProducto"
+							class="form-control"
+							name="alcohol"
+							placeholder="4.1"
+							required
+						/>
+					</div>
+					<div class="form-group col-md-3 col-3">
+						<label for="ibu">IBU</label>
+						<input
+							type="number"
+							id="ibu"
+							class="form-control"
+							name="ibu"
+							required
+							placeholder="8.1"
+							required
+						/>
+					</div>
+					<div class="form-group col-md-3 col-3">
+						<label for="medida">Medida</label>
+						<input
+							type="number"
+							id="medida"
+							class="form-control"
+							name="medida"
+							placeholder="500ml - 1L"
+							required
+						/>
+					</div>
+					<div class="form-group col-md-3 col-3">
+						<label for="price">Precio</label>
+						<input
+							type="number"
+							id="price"
+							class="form-control"
+							name="price"
+							placeholder="$ 150"
+							required
+						/>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="input-group col-md-12">
+						<label class="mr-auto" for="inputFile">Agregar Imágen</label>
+						<div class="custom-file">
+							<input type="file" class="custom-file-input" id="inputFile" name="imagen" required />
+							<label id="lblInputFile" class="custom-file-label" for="inputFile"
+								>Elegir Archivo</label
+							>
+						</div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-12">
+						<label for="desProducto">Descripción</label
+						><textarea name="description" id="resProducto" class="form-control" rows="10"></textarea>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<input class="btn btn-primary" type="submit" value="Cargar" />
+					</div>
+				</div>
+			</form>
+		</main>
+		<!-- Include del footer.ejs -->
+		<%- include('./partials/footer.ejs') %> <%- include('./partials/jsIncludes.ejs') %>
+	</body>
+</html>

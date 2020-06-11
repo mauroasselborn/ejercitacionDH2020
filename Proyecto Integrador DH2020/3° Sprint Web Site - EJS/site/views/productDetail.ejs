@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Include con ejs de todo el codigo en comun del head -->
+		<%- include('./partials/head.ejs') %>
+		<link rel="stylesheet" href="/stylesheets/productDetail.css" />
+		<title>Detalle Producto | BeerStore</title>
+	</head>
+
+	<body>
+		<!-- Include del header.ejs -->
+		<%- include('./partials/header.ejs', {nombre}) %>
+		<main class="container">
+			<div class="producto">
+				<div class="cont-img-producto">
+					<img src="<%= producto.image %>" alt="" />
+				</div>
+				<div class="producto-descripcion">
+					<h2><%= producto.name %></h2>
+					<p><span class="strong">Categoría: </span><%= producto.category %></p>
+					<p><span class="strong">Medida: </span><%= producto.medida %></p>
+					<p><span class="strong">Origen: </span><%= producto.origen %></p>
+					<p><span class="strong">Graduación Alcohólica: </span><%= producto.alcohol %></p>
+					<p><span class="strong">IBU: </span><%= producto.ibu %></p>
+					<p><span class="strong">Precio: </span>$<%= producto.price %></p>
+					<div style="margin-top: 50px;">
+						<a href="/products#producto<%= producto.id %> " class="btn btn-primary">Volver</a>
+						<a href="/cart/<%= producto.id %> " class="btn btn-success"
+							><i class="fas fa-shopping-cart"></i
+						></a>
+					</div>
+				</div>
+			</div>
+		</main>
+		<!-- Include del footer.ejs -->
+		<%- include('./partials/footer.ejs') %> <%- include('./partials/jsIncludes.ejs') %>
+	</body>
+</html>

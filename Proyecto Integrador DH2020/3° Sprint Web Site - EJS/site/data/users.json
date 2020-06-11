@@ -1,0 +1,32 @@
+[
+	{
+		"id": 0,
+		"first_name": "Mauro",
+		"last_name": "Asselborn",
+		"email": "mauasselborn@gmail.com",
+		"password": "$2b$10$/I2q.2nTdE6BPtjibDP59eiMpQckCEKO2bTGqNv1kYTNHNsze7A3W",
+		"category": "admin",
+		"image": "img"
+	},
+	{
+		"id": 1,
+		"first_name": "Segismundo",
+		"last_name": "Embrici",
+		"email": "sembrici@gmail.com",
+		"password": "$2b$10$L2Ak3hP4//CbSRenHCDC8O1AEwuWlY3pbUvkuuho2PLOcpYaJGk2y"
+	},
+	{
+		"id": 2,
+		"first_name": "Ezequiel",
+		"last_name": "Salomon",
+		"email": "ezequiel.salomon@gmail.com",
+		"password": "$2b$10$43mHMHSNhkeCxg1khUA5XOAwVAO2dlq/TSC43mxxAtUveKQDd4VoW"
+	},
+	{
+		"id": 3,
+		"first_name": "Florencia",
+		"last_name": "Mariani",
+		"email": "flor.marianis@gmail.com",
+		"password": "$2b$10$82RywHF9oOQL.Bh7HhD5KOvoGqyIll3XSJESp0LlXcGohwVXH/Q0C"
+	}
+]

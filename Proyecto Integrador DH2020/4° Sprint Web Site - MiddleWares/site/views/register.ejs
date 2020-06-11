@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Include con ejs de todo el codigo en comun del head -->
+		<%- include('./partials/head.ejs') %>
+		<link rel="stylesheet" href="/stylesheets/register.css" />
+		<title>Registro | BeerStore</title>
+	</head>
+
+	<body>
+		<!-- Include del header.ejs -->
+		<%- include('./partials/header.ejs',{nombre,imageUsr : false, usr : false}) %>
+
+		<main class="container">
+			<h2 id="registro" style="margin: 30px 0;">Registro</h2>
+			<form id="formRegister" method="POST" action="/register" enctype="multipart/form-data">
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="inputName">Nombre</label>
+						<input
+							type="text"
+							class="form-control"
+							id="inputName"
+							placeholder="Ezequiel"
+							required
+							name="first_name"
+						/>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="inputLastName">Apellido</label>
+						<input
+							type="text"
+							class="form-control"
+							id="inputLastName"
+							placeholder="Salomon"
+							required
+							name="last_name"
+						/>
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="inputEmail">Email</label>
+						<input
+							type="email"
+							class="form-control"
+							id="inputEmail"
+							required
+							placeholder="eze@salomon.com"
+							name="email"
+						/>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="inputPassword">Password</label>
+						<input
+							type="password"
+							class="form-control"
+							id="inputPassword"
+							required
+							placeholder="12345"
+							name="password"
+						/>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="inputAddress">Direccion</label>
+						<input
+							type="text"
+							class="form-control"
+							id="inputAddress"
+							placeholder="Av. Siempreviva 742"
+							required
+							name="dir"
+						/>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="inputDate">Fecha de Nacimiento</label>
+						<input type="date" class="form-control" id="inputDate" required name="fechNac" />
+					</div>
+				</div>
+				<div class="form-row align-items-center">
+					<div class="input-group col-md-8 m-auto">
+						<label class="mr-auto" for="inputFileAvatar">Agregar Avatar</label>
+						<div class="custom-file">
+							<input
+								type="file"
+								class="custom-file-input"
+								id="inputFileAvatar"
+								name="imagenAvatar"
+								required
+							/>
+							<label id="lblInputFile" class="custom-file-label" for="inputFileAvatar"
+								>Elegir Archivo</label
+							>
+						</div>
+					</div>
+					<div id="contenedor-avatar" class="col-md-2"></div>
+				</div>
+
+				<!-- <div class="row"> -->
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<label for="inputCity">Ciudad</label>
+						<input type="text" class="form-control" id="inputCity" required placeholder="Campana" />
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputState">Provincia</label>
+						<select id="inputState" class="form-control" required>
+							<option disabled value="null">Elegir...</option>
+							<option value="Buenos Aires">Bs. As.</option>
+							<option value="Catamarca">Catamarca</option>
+							<option value="Chaco">Chaco</option>
+							<option value="Chubut">Chubut</option>
+							<option value="Cordoba">Cordoba</option>
+							<option value="Corrientes">Corrientes</option>
+							<option value="Entre Rios">Entre Rios</option>
+							<option value="Formosa">Formosa</option>
+							<option value="Jujuy">Jujuy</option>
+							<option value="La Pampa">La Pampa</option>
+							<option value="La Rioja">La Rioja</option>
+							<option value="Mendoza">Mendoza</option>
+							<option value="Misiones">Misiones</option>
+							<option value="Neuquen">Neuquen</option>
+							<option value="Rio Negro">Rio Negro</option>
+							<option value="Salta">Salta</option>
+							<option value="San Juan">San Juan</option>
+							<option value="San Luis">San Luis</option>
+							<option value="Santa Cruz">Santa Cruz</option>
+							<option value="Santa Fe">Santa Fe</option>
+							<option value="Sgo. del Estero">Sgo. del Estero</option>
+							<option value="Tierra del Fuego">Tierra del Fuego</option>
+							<option value="Tucuman">Tucuman</option>
+						</select>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputZip">CP</label>
+						<input type="number" class="form-control" id="inputZip" required placeholder="2804" />
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<button type="submit" id="btnSubmit" class="btn btn-primary">Registrar</button>
+					</div>
+				</div>
+			</form>
+		</main>
+		<!-- Include del footer.ejs -->
+		<%- include('./partials/footer.ejs') %> <%- include('./partials/jsIncludes.ejs') %>
+		<script src="/javascripts/register.js"></script>
+	</body>
+</html>

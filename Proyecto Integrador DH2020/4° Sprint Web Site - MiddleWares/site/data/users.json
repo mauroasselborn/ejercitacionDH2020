@@ -1,0 +1,29 @@
+[
+	{
+		"id": 0,
+		"first_name": "Prueba",
+		"last_name": "Prueba",
+		"email": "prueba@gmail.com",
+		"password": "$2b$10$7mJduNaW3xhT7vYu9f/bJ.aJQDkgSjO0djrjJIdhZntYfRHkcYfim",
+		"category": "user",
+		"image": "/images/usuarios/1591838831144.png"
+	},
+	{
+		"id": 1,
+		"first_name": "admin",
+		"last_name": "Rodo y Harold",
+		"email": "admin@beerstore.com",
+		"password": "$2b$10$/SkDVkwiSbI/48vZOfuA0uAmtAws/DKVf9Ap7xxQDdxfjYfeKQIDG",
+		"category": "admin",
+		"image": "/images/usuarios/1591839161839.jpg"
+	},
+	{
+		"id": 2,
+		"first_name": "Mauro",
+		"last_name": "Prueba",
+		"email": "mauasselborn@gmail.com",
+		"password": "$2b$10$7mJduNaW3xhT7vYu9f/bJ.aJQDkgSjO0djrjJIdhZntYfRHkcYfim",
+		"category": "admin",
+		"image": "/images/usuarios/1591839161840.jpg"
+	}
+]

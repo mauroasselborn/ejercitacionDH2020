@@ -1,0 +1,85 @@
+<header>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" style="font-size: 1.5rem;" href="/" id="titulo">BeerStore</a>
+		<button
+			class="navbar-toggler"
+			type="button"
+			data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent"
+			aria-expanded="false"
+			aria-label="Toggle navigation"
+		>
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="/"><i class="fas fa-home"></i> Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/products"><i class="fas fa-beer"></i> Products</a>
+				</li>
+				<!-- <li class="nav-item dropdown">
+					<a
+						class="nav-link dropdown-toggle"
+						href="#"
+						id="navbarDropdown"
+						role="button"
+						data-toggle="dropdown"
+						aria-haspopup="true"
+						aria-expanded="false"
+					>
+						<i class="fas fa-user"></i> Users
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="/login"><i class="fas fa-sign-in-alt"></i> Login</a>
+						<a class="dropdown-item" href="/register"><i class="fas fa-user-plus"></i> Register</a>
+					</div>
+				</li> -->
+				<li class="nav-item">
+					<a class="nav-link" href="/cart" tabindex="-1" aria-disabled="true"
+						><i class="fas fa-shopping-cart"></i> Cart</a
+					>
+				</li>
+
+				<li class="nav-item dropdown" id="admin-menu">
+					<a
+						class="nav-link dropdown-toggle"
+						href="#"
+						id="navbarDropdown2"
+						role="button"
+						data-toggle="dropdown"
+						aria-haspopup="true"
+						aria-expanded="false"
+					>
+						<% if (imageUsr) { %>
+
+						<img class="admin-icon" src="<%= imageUsr %>" alt="" /> <%= nombre %> <% }else{ %>
+						<i class="admin-icon fas fa-user"></i>
+						<% } %>
+					</a>
+					<div class="dropdown-menu add-product" aria-labelledby="navbarDropdown2">
+						<% if (!usr) { %>
+						<a class="dropdown-item" href="/login"><i class="fas fa-sign-in-alt"></i> Login</a>
+						<a class="dropdown-item" href="/register"><i class="fas fa-user-plus"></i> Register</a>
+
+						<% }else{ %>
+						<form action="/login/logout" method="POST">
+							<button type="submit" class="dropdown-item">
+								<i class="fas fa-sign-in-alt"></i> Logout
+							</button>
+						</form>
+						<% } %> <% if (usr === 'admin') { %>
+
+						<a class="dropdown-item" href="/products/create"
+							><i class="fas fa-user-plus"></i> Create Product</a
+						>
+						<% } %>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</header>

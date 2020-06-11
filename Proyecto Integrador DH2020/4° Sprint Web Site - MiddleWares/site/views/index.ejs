@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Include con ejs de todo el codigo en comun del head -->
+		<%- include('./partials/head.ejs') %>
+		<link rel="stylesheet" href="/stylesheets/home.css" />
+		<title>Inicio | BeerStore</title>
+	</head>
+
+	<body>
+		<!-- Include del header.ejs -->
+		<%- include('./partials/header.ejs',{nombre,imageUsr,usr}) %>
+		<main>
+			<div id="carouselExampleCaptions" class="carousel slide m-auto" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+					<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+					<li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+					<li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+					<li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+				</ol>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<div id="img1">
+							<div class="difuminado"></div>
+						</div>
+						<div class="carousel-caption d-none d-md-block">
+							<h5>Productos Importados</h5>
+							<a href="/products" class="btn btn-primary">Ver Más</a>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<div id="img2"><div class="difuminado"></div></div>
+						<div class="carousel-caption d-none d-md-block">
+							<h5>Grandes Variedades</h5>
+							<a href="/products" class="btn btn-primary">Ver Más</a>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<div id="img3"><div class="difuminado"></div></div>
+						<div class="carousel-caption d-none d-md-block">
+							<h5>Los Mejores Sabores</h5>
+							<a href="/products" class="btn btn-primary">Ver Más</a>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<div id="img4"><div class="difuminado"></div></div>
+						<div class="carousel-caption d-none d-md-block">
+							<h5>Tenemos las Mejores Promociones</h5>
+							<a href="/products" class="btn btn-primary">Ver Más</a>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<div id="img5"><div class="difuminado"></div></div>
+						<div class="carousel-caption d-none d-md-block">
+							<h5>Para Disfrutar Con Amigos</h5>
+							<a href="/products" class="btn btn-primary">Ver Más</a>
+						</div>
+					</div>
+				</div>
+				<a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+
+			<section class="container">
+				<article class="centro">
+					<div class="photo-container">
+						<img src="/images/birras.png" alt="cervezas" />
+					</div>
+
+					<div class="texto">
+						<h2>"Beer Store"</h2>
+						<p>
+							Somos una empresa destinada a la venta de cervezas premium online. Con el fin de
+							satisfacer a nuestros clientes y que disfruten de una experiencia única con una
+							impronta y estilo de cada bebida, sin tener que moverse de su casa."
+						</p>
+					</div>
+				</article>
+			</section>
+		</main>
+		<!-- Include del footer.ejs -->
+		<%- include('./partials/footer.ejs') %> <%- include('./partials/jsIncludes.ejs') %>
+	</body>
+</html>
