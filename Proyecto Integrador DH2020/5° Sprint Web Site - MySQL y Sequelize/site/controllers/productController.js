@@ -78,11 +78,20 @@ const productController = {
 		// variable que almacena el id pasando por parametro desde el router
 		let idProducto = req.params.id
 		const nombre = req.session.nombre
-		db.Products.findByPk(idProducto).then((product) => {
+
+		let pC = db.ProductsCategory.findAll()
+
+		let p = db.Products.findByPk(idProducto)
+
+		let pS = db.ProductsSize.findAll()
+
+		Promise.all([pC, p, pS]).then(([products_category, product, products_size]) => {
 			res.render("productEdit", {
 				nombre,
 				imageUsr: req.session.imageUsr,
 				usr: req.session.usr,
+				products_category,
+				products_size,
 				product,
 			})
 		})
@@ -99,7 +108,7 @@ const productController = {
 				name: req.body.name,
 				description: req.body.description,
 				category_id: req.body.category_id,
-				size: req.body.size,
+				size_id: req.body.size_id,
 				origin: req.body.origin,
 				alcohol: req.body.alcohol,
 				ibu: req.body.ibu,
@@ -115,7 +124,7 @@ const productController = {
 		)
 
 		//Redireccionamos a la vista de productos
-		res.redirect("/products")
+		res.redirect("/products/" + idProducto)
 		next()
 	},
 

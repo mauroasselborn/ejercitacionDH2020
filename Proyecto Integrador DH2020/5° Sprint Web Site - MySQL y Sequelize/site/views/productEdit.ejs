@@ -28,15 +28,20 @@
 					</div>
 					<div class="form-group col-md-4">
 						<label for="catProducto">Categoría</label>
-						<input
-							type="text"
-							id="catProducto"
-							name="category_id"
-							class="form-control"
-							placeholder="lata - botella..."
-							required
-							value="<%= product.category_id %>"
-						/>
+
+						<select name="category_id" id="category" class="form-control" required>
+							<option selected disabled>Elegir..</option>
+							<% for( let i = 0; i < products_category.length; i++ ) { %> <% if (product.category_id
+							== products_category[i].id) { %>
+							<option value="<%= products_category[i].id %>" selected
+								><%= products_category[i].name %>
+							</option>
+							<% }else{%>
+							<option value="<%= products_category[i].id %>"
+								><%= products_category[i].name %>
+							</option>
+							<% } %> <% } %>
+						</select>
 					</div>
 					<div class="form-group col-md-4">
 						<label for="origenProducto">Origen</label>
@@ -76,14 +81,17 @@
 					</div>
 					<div class="form-group col-md-3 col-3">
 						<label for="medida">Medida</label>
-						<input
-							type="number"
-							id="medida"
-							class="form-control"
-							name="size"
-							required
-							value="<%= product.size %>"
-						/>
+						<select name="size_id" id="medida" class="form-control" required>
+							<option selected disabled>Elegir..</option>
+							<% for( let i = 0; i < products_size.length; i++ ) { %> <% if (product.size_id ==
+							products_size[i].id) { %>
+							<option value="<%= products_size[i].id %>" selected
+								><%= products_size[i].size %></option
+							>
+							<% }else{ %>
+							<option value="<%= products_size[i].id %>"><%= products_size[i].size %> </option>
+							<% } %> <% } %>
+						</select>
 					</div>
 					<div class="form-group col-md-3 col-3">
 						<label for="price">Precio</label>
