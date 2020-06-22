@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Include con ejs de todo el codigo en comun del head -->
+		<%- include('./partials/head.ejs') %>
+		<link rel="stylesheet" href="/stylesheets/productDetail.css" />
+		<title>Detalle Producto | BeerStore</title>
+	</head>
+
+	<body>
+		<!-- Include del header.ejs -->
+		<%- include('./partials/header.ejs',{nombre,imageUsr}) %>
+		<main class="container">
+			<div class="producto">
+				<div class="cont-img-producto">
+					<img src="<%= product.image_url %>" alt="" />
+				</div>
+				<div class="producto-descripcion">
+					<h2><%= product.name %></h2>
+					<p><span class="strong">Categoría: </span><%= product.products_category.name %></p>
+					<p><span class="strong">Medida: </span><%= product.products_size.size %></p>
+					<p><span class="strong">Origen: </span><%= product.origin %></p>
+					<p><span class="strong">Graduación Alcohólica: </span><%= product.alcohol %></p>
+					<p><span class="strong">IBU: </span><%= product.ibu %></p>
+					<p><span class="strong">Precio: </span>$<%= product.price %></p>
+					<div style="margin-top: 50px;">
+						<a href="/products#producto<%= product.id %> " class="btn btn-primary">Volver</a>
+						<form style="display: inline;" method="POST" action="/cart/<%= product.id %>/addCart">
+							<button type="submit" class="btn btn-success" title="Comprar">
+								<i class="fas fa-shopping-cart"></i>
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</main>
+		<!-- Include del footer.ejs -->
+		<%- include('./partials/footer.ejs') %> <%- include('./partials/jsIncludes.ejs') %>
+	</body>
+</html>

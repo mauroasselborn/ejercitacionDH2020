@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Include con ejs de todo el codigo en comun del head -->
+		<%- include('./partials/head.ejs') %>
+		<link rel="stylesheet" href="/stylesheets/productCart.css" />
+		<title>Carrito | BeerStore</title>
+	</head>
+
+	<body>
+		<!-- Include del header.ejs -->
+		<%- include('./partials/header.ejs',{nombre,imageUsr,usr}) %>
+		<main class="container">
+			<section id="carrito">
+				<article id="header-cart">
+					<h2>Carrito</h2>
+				</article>
+				<% for( let i = 0; i < carrito.length; i++ ) { %>
+				<article id="body-cart">
+					<div id="img-cart-container">
+						<img src="<%= carrito[i].image %>" alt="img" />
+					</div>
+
+					<div id="detalles-cart">
+						<div id="descripcion-cart">
+							<h2><%= carrito[i].name %></h2>
+
+							<article id="counter">
+								<div id="precio-cart">
+									<button id="res-cart">-</button>
+									<div id="precio-cart">
+										<p></p>
+									</div>
+									<button id="sum-cart">+</button>
+								</div>
+							</article>
+
+							<div id="sub-total">
+								<p>$150</p>
+							</div>
+						</div>
+						<div class="cantidad">
+							<div>
+								<p>cantidad: 1</p>
+							</div>
+						</div>
+						<div class="precio-unidad">
+							<p>precio por unidad:</p>
+						</div>
+						<div class="precio-unidad-valor">
+							<p>$<%= carrito[i].price %></p>
+						</div>
+						<div id="eliminar">
+							<p>eliminar</p>
+						</div>
+					</div>
+				</article>
+				<% } %>
+				<article id="footer-cart">
+					<div class="main-sumary">
+						<div>
+							<p>cantidad de productos: 1</p>
+						</div>
+
+						<div class="main-footer">
+							<div class="total">
+								<p>total</p>
+							</div>
+							<div id="precio-final-cart">
+								<p>$ 1.500</p>
+							</div>
+						</div>
+
+						<div class="footer-cart-buttons">
+							<div class="finalizar">
+								<button class="btn btn-success">Finalizar Compra</button>
+							</div>
+							<div class="volver">
+								<button class="btn btn-primary">Volver</button>
+							</div>
+						</div>
+					</div>
+				</article>
+			</section>
+		</main>
+		<!-- Include del footer.ejs -->
+		<%- include('./partials/footer.ejs') %> <%- include('./partials/jsIncludes.ejs') %>
+	</body>
+</html>

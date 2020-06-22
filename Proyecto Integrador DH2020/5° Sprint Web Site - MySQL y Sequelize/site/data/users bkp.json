@@ -1,0 +1,92 @@
+[
+	{
+		"id": 0,
+		"first_name": "Mauricio",
+		"last_name": "McAughtry",
+		"email": "mmcaughtry9@mlb.com",
+		"password": "DrCW3kjpY",
+		"category": "user",
+		"image": "user_0.jpg"
+	},
+	{
+		"id": 1,
+		"first_name": "Sashenka",
+		"last_name": "Wilshaw",
+		"email": "swilshaw0@goo.gl",
+		"password": "zgNyvly0P7",
+		"category": "user",
+		"image": "user_1.jpg"
+	},
+	{
+		"id": 2,
+		"first_name": "Marys",
+		"last_name": "Nabarro",
+		"email": "mnabarro1@newsvine.com",
+		"password": "JqsDtzd",
+		"category": "user",
+		"image": "user_2.jpg"
+	},
+	{
+		"id": 3,
+		"first_name": "Cesare",
+		"last_name": "Furphy",
+		"email": "cfurphy2@macromedia.com",
+		"password": "Sbu7pY60Oz6a",
+		"category": "user",
+		"image": "user_3.jpg"
+	},
+	{
+		"id": 4,
+		"first_name": "Dominique",
+		"last_name": "Norwood",
+		"email": "dnorwood3@nifty.com",
+		"password": "payt8mFTl",
+		"category": "user",
+		"image": "user_4.jpg"
+	},
+	{
+		"id": 5,
+		"first_name": "Ramona",
+		"last_name": "Milborn",
+		"email": "rmilborn4@usatoday.com",
+		"password": "HgYiMdQ",
+		"category": "user",
+		"image": "user_5.jpg"
+	},
+	{
+		"id": 6,
+		"first_name": "Peggy",
+		"last_name": "Soutar",
+		"email": "psoutar5@prweb.com",
+		"password": "5LxLwE",
+		"category": "user",
+		"image": "user_6.jpg"
+	},
+	{
+		"id": 7,
+		"first_name": "Woodrow",
+		"last_name": "Haggie",
+		"email": "whaggie6@squarespace.com",
+		"password": "RLc3nX3XT",
+		"category": "user",
+		"image": "user_7.jpg"
+	},
+	{
+		"id": 8,
+		"first_name": "Jessalin",
+		"last_name": "Shovlar",
+		"email": "jshovlar7@plala.or.jp",
+		"password": "pJRIv0c9",
+		"category": "user",
+		"image": "user_8.jpg"
+	},
+	{
+		"id": 9,
+		"first_name": "Lettie",
+		"last_name": "Grimsdell",
+		"email": "lgrimsdell8@cnbc.com",
+		"password": "1zSa9x",
+		"category": "user",
+		"image": "user_9.jpg"
+	}
+]

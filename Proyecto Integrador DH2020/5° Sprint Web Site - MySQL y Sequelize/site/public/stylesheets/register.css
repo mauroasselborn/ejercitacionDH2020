@@ -1,0 +1,22 @@
+#contenedor-avatar {
+	display: none;
+}
+
+@media (min-width: 1024px) {
+	#contenedor-avatar {
+		display: block;
+		width: 200px;
+		height: 200px;
+		margin: auto;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		background-position: center;
+		background-size: cover;
+	}
+
+	#avatar {
+		width: 200px;
+		height: 200px;
+		border-radius: 20px;
+	}
+}
