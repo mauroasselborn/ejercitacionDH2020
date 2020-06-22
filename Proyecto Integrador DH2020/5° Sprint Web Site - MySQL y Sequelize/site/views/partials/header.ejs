@@ -21,23 +21,7 @@
 				<li class="nav-item">
 					<a class="nav-link" href="/products"><i class="fas fa-beer"></i> Products</a>
 				</li>
-				<!-- <li class="nav-item dropdown">
-					<a
-						class="nav-link dropdown-toggle"
-						href="#"
-						id="navbarDropdown"
-						role="button"
-						data-toggle="dropdown"
-						aria-haspopup="true"
-						aria-expanded="false"
-					>
-						<i class="fas fa-user"></i> Users
-					</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="/login"><i class="fas fa-sign-in-alt"></i> Login</a>
-						<a class="dropdown-item" href="/register"><i class="fas fa-user-plus"></i> Register</a>
-					</div>
-				</li> -->
+
 				<li class="nav-item">
 					<a class="nav-link" href="/cart" tabindex="-1" aria-disabled="true"
 						><i class="fas fa-shopping-cart"></i> Cart</a
@@ -71,7 +55,7 @@
 								<i class="fas fa-sign-in-alt"></i> Logout
 							</button>
 						</form>
-						<% } %> <% if (usr === 'admin') { %>
+						<% } %> <% if (usr === 1) { %>
 
 						<a class="dropdown-item" href="/products/create"
 							><i class="fas fa-user-plus"></i> Create Product</a

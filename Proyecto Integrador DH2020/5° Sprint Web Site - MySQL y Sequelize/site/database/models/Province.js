@@ -13,5 +13,12 @@ module.exports = (sequelize, DataTypes) => {
 	}
 
 	const Province = sequelize.define(alias, cols, config)
+
+	Province.associate = (models) => {
+		Province.hasMany(models.Provinces, {
+			as: "users",
+			foreignKey: "province_id",
+		})
+	}
 	return Province
 }

@@ -1,10 +1,7 @@
 const fs = require("fs")
 const path = require("path")
-const archivo = require("../public/javascripts/funciones")
-const rutaArchivoProducto = path.join("data", "products.json")
 
 const db = require("../database/models")
-let Op = db.Sequelize.Op
 
 const productController = {
 	// Página princiapl de productos donde lista el total de elmentos leidos en el json

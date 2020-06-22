@@ -72,12 +72,12 @@
 							id="inputAddress"
 							placeholder="Av. Siempreviva 742"
 							required
-							name="dir"
+							name="address"
 						/>
 					</div>
 					<div class="form-group col-md-6">
 						<label for="inputDate">Fecha de Nacimiento</label>
-						<input type="date" class="form-control" id="inputDate" required name="fechNac" />
+						<input type="date" class="form-control" id="inputDate" required name="birthdate" />
 					</div>
 				</div>
 				<div class="form-row align-items-center">
@@ -103,13 +103,19 @@
 				<div class="form-row">
 					<div class="form-group col-md-4">
 						<label for="inputCity">Ciudad</label>
-						<input type="text" class="form-control" id="inputCity" required placeholder="Campana" />
+						<input
+							type="text"
+							class="form-control"
+							id="inputCity"
+							required
+							placeholder="Campana"
+							name="city"
+						/>
 					</div>
 					<div class="form-group col-md-4">
 						<label for="inputState">Provincia</label>
-						<select id="inputState" class="form-control" required>
+						<select id="inputState" class="form-control" required name="province_id">
 							<option disabled selected>Elegir...</option>
-							<option value="Buenos Aires">Bs. As.</option>
 							<% for( let i = 0; i < provincias.length; i++ ) { %>
 							<option value="<%= provincias[i].id %>"><%= provincias[i].name %> </option>
 							<% } %>
@@ -117,7 +123,14 @@
 					</div>
 					<div class="form-group col-md-4">
 						<label for="inputZip">CP</label>
-						<input type="number" class="form-control" id="inputZip" required placeholder="2804" />
+						<input
+							type="number"
+							class="form-control"
+							id="inputZip"
+							required
+							placeholder="2804"
+							name="zip"
+						/>
 					</div>
 				</div>
 
