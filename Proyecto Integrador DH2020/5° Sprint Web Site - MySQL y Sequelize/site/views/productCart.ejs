@@ -9,21 +9,21 @@
 
 	<body>
 		<!-- Include del header.ejs -->
-		<%- include('./partials/header.ejs',{nombre,imageUsr,usr}) %>
+		<%- include('./partials/header.ejs',{nombre,imageUsr,usr,usrId}) %>
 		<main class="container">
 			<section id="carrito">
 				<article id="header-cart">
 					<h2>Carrito</h2>
 				</article>
-				<% for( let i = 0; i < carrito.length; i++ ) { %>
+				<% for( let i = 0; i < productsCartList.length; i++ ) { %>
 				<article id="body-cart">
 					<div id="img-cart-container">
-						<img src="<%= carrito[i].image %>" alt="img" />
+						<img src="<%= productsCartList[i].image_url %>" alt="img" />
 					</div>
 
 					<div id="detalles-cart">
 						<div id="descripcion-cart">
-							<h2><%= carrito[i].name %></h2>
+							<h2><%= productsCartList[i].name %></h2>
 
 							<article id="counter">
 								<div id="precio-cart">
@@ -36,19 +36,19 @@
 							</article>
 
 							<div id="sub-total">
-								<p>$150</p>
+								<p>$<%= productsCartList[i].cantidad * productsCartList[i].price %></p>
 							</div>
 						</div>
 						<div class="cantidad">
 							<div>
-								<p>cantidad: 1</p>
+								<p>Cantidad: <%= productsCartList[i].cantidad %></p>
 							</div>
 						</div>
 						<div class="precio-unidad">
 							<p>precio por unidad:</p>
 						</div>
 						<div class="precio-unidad-valor">
-							<p>$<%= carrito[i].price %></p>
+							<p>$<%= productsCartList[i].price %></p>
 						</div>
 						<div id="eliminar">
 							<p>eliminar</p>
@@ -59,7 +59,7 @@
 				<article id="footer-cart">
 					<div class="main-sumary">
 						<div>
-							<p>cantidad de productos: 1</p>
+							<p>cantidad de productos: <%= cantTotalProducts %></p>
 						</div>
 
 						<div class="main-footer">
@@ -67,7 +67,7 @@
 								<p>total</p>
 							</div>
 							<div id="precio-final-cart">
-								<p>$ 1.500</p>
+								<p>$ <%= totalPrice %></p>
 							</div>
 						</div>
 

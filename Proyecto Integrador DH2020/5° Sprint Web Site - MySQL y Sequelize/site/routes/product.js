@@ -24,4 +24,7 @@ router.put("/:id", upload.any(), productController.saveEditProduct)
 // /products/:id/edit --> GET
 router.get("/:id/edit", productController.editProduct)
 
+// /products --> POST Search Products
+router.post("/search", productController.search)
+
 module.exports = router

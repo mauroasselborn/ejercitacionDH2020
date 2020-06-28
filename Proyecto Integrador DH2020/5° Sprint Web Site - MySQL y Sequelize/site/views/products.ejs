@@ -9,10 +9,24 @@
 
 	<body>
 		<!-- Include del header.ejs -->
-		<%- include('./partials/header.ejs',{nombre,imageUsr,usr}) %>
+		<%- include('./partials/header.ejs',{nombre,imageUsr,usr,usrId}) %>
 		<main class="contain">
 			<div class="banner-products"></div>
 			<h2 style="text-align: center; margin-top: 20px;">Lista de Producto en Venta</h2>
+			<form action="/products/search" method="POST">
+				<div class="form-row">
+					<input
+						type="text"
+						class="form-control col-md-6 col-8"
+						placeholder="Buscar"
+						name="search"
+						required
+					/>
+					<button type="submit" class="btn btn-primary form-control col-md-2 col-2">
+						Buscar
+					</button>
+				</div>
+			</form>
 			<div class="productos">
 				<% for( let i = 0; i < products.length; i++ ) { %>
 

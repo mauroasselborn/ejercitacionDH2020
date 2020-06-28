@@ -1,18 +1,18 @@
 const fs = require("fs")
 const path = require("path")
-
 const db = require("../database/models")
 
 const productController = {
 	// Página princiapl de productos donde lista el total de elmentos leidos en el json
 	index: (req, res) => {
 		const nombre = req.session.nombre
-		db.Products.findAll().then((products) => {
+		db.Products.findAll({ order: [["price", "ASC"]] }).then((products) => {
 			res.render("products", {
 				nombre,
 				usr: req.session.usr,
 				imageUsr: req.session.imageUsr,
 				products,
+				usrId: req.session.usrId ? req.session.usrId : "",
 			})
 		})
 	},
@@ -31,6 +31,7 @@ const productController = {
 				imageUsr: req.session.imageUsr,
 				usr: req.session.usr,
 				product,
+				usrId: req.session.usrId ? req.session.usrId : "",
 			})
 		})
 	},
@@ -48,6 +49,7 @@ const productController = {
 				usr: req.session.usr,
 				categorys,
 				product_size,
+				usrId: req.session.usrId ? req.session.usrId : "",
 			})
 		})
 	},
@@ -70,7 +72,6 @@ const productController = {
 
 		next()
 	},
-	// Vista de edicion del producto //TODO: HECHO
 	editProduct: (req, res) => {
 		// variable que almacena el id pasando por parametro desde el router
 		let idProducto = req.params.id
@@ -90,11 +91,10 @@ const productController = {
 				products_category,
 				products_size,
 				product,
+				usrId: req.session.usrId ? req.session.usrId : "",
 			})
 		})
 	},
-
-	// Actualizacion del producto //TODO: HECHO
 
 	saveEditProduct: (req, res, next) => {
 		// variable que almacena el id pasando por parametro desde el router
@@ -144,6 +144,30 @@ const productController = {
 		// fs.unlinkSync(imgUrl)
 		//Una vez borrado el archivo redireccionamos a la vista de productos.
 		res.redirect("/products")
+	},
+	search: (req, res) => {
+		const nombre = req.session.nombre
+		db.Products.findAll({
+			where: {
+				[db.Sequelize.Op.or]: [
+					{ name: { [db.Sequelize.Op.like]: `%${req.body.search}%` } },
+					{ description: { [db.Sequelize.Op.like]: `%${req.body.search}%` } },
+				],
+			},
+			order: [["price", "ASC"]],
+		})
+			.then((products) => {
+				res.render("products", {
+					nombre,
+					usr: req.session.usr,
+					imageUsr: req.session.imageUsr,
+					products,
+					usrId: req.session.usrId ? req.session.usrId : "",
+				})
+			})
+			.catch((error) => {
+				console.log(error)
+			})
 	},
 }
 

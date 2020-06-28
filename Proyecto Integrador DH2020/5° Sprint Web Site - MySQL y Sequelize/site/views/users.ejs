@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Include con ejs de todo el codigo en comun del head -->
+		<%- include('./partials/head.ejs') %>
+		<link rel="stylesheet" href="/stylesheets/home.css" />
+		<title>Users | BeerStore</title>
+	</head>
+
+	<body>
+		<!-- Include del header.ejs -->
+		<%- include('./partials/header.ejs',{nombre,imageUsr,usr,usrId:""}) %>
+		<main>
+			<table border="1" style="text-align: center; width: 80%; margin: auto; margin-top: 20px;">
+				<tr>
+					<th>Nombre</th>
+					<th>Apellido</th>
+					<th>Tipo de Usuario</th>
+					<th>Email</th>
+					<th>Acciones</th>
+				</tr>
+				<% for( let i = 0; i < usuarios.length; i++ ) { %>
+				<tr>
+					<td><%= usuarios[i].first_name %></td>
+					<td><%= usuarios[i].last_name %></td>
+					<td><%= usuarios[i].userCategory.name %></td>
+					<td><%= usuarios[i].email %></td>
+					<td>
+						<a href="/user/useredit/<%= usuarios[i].id %>" class="btn btn-warning" title="Editar"
+							><i class="far fa-edit"></i
+						></a>
+						<form
+							action="/user/delete/<%= usuarios[i].id %>?_method=DELETE"
+							method="POST"
+							style="display: inline;"
+						>
+							<button type="submit" class="btn btn-danger" title="Editar">
+								<i class="far fa-trash-alt"></i>
+							</button>
+						</form>
+					</td>
+				</tr>
+				<% } %>
+			</table>
+		</main>
+		<!-- Include del footer.ejs -->
+		<%- include('./partials/footer.ejs') %> <%- include('./partials/jsIncludes.ejs') %>
+	</body>
+</html>

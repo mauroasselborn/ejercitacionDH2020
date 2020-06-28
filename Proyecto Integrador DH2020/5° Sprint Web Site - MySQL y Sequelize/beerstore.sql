@@ -29,7 +29,11 @@ CREATE TABLE `cart_items` (
   `product_id` int(11) NOT NULL,
   `factura_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `fk_cart_product_idx` (`product_id`),
+  KEY `fk_cart_factura_idx` (`factura_id`),
+  CONSTRAINT `fk_cart_factura` FOREIGN KEY (`factura_id`) REFERENCES `facturas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_cart_product` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -55,7 +59,11 @@ CREATE TABLE `facturas` (
   `cart_id` int(11) NOT NULL,
   `total_price` decimal(10,2) NOT NULL,
   `purchase_date` date NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `fk_factura_user_idx` (`user_id`),
+  KEY `fk_factura_cart_idx` (`cart_id`),
+  CONSTRAINT `fk_factura_cart` FOREIGN KEY (`cart_id`) REFERENCES `cart_items` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_factura_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -100,7 +108,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` (`id`, `name`, `description`, `category_id`, `size_id`, `origin`, `alcohol`, `ibu`, `image_url`, `price`) VALUES (1,'Weidmann Hefetrüb','La Weidmann Hefetrüb es una cerveza de trigo que como toda Hefeweissbier no cuenta con la etapa de filtrado, dando ese aspecto turbio característico de este estilo. ',3,1,'Alemania',15,855,'/images/productos/1592794858610.png',200.00),(2,'Okcidenta 449 APA','Cerveza única de color dorado intenso y espuma blanca persistente. De cuerpo robusto e intensamente lupulada con las mejores variedades de Iúpulo del noroeste de EEUU',1,2,'Argentina',14,4,'/images/productos/1592794864507.png',120.00),(3,'Tart - Raisin And Pecan','Oncobiologics, Inc.',1,3,'China',24,26,'/images/productos/1592794870754.png',702.15),(4,'Buffalo - Striploin','KB Home',1,3,'Senegal',14,43,'/images/productos/1592794836882.png',292.94),(5,'Cleaner - Lime Away','Fitbit, Inc.',3,4,'Honduras',19,69,'/images/productos/1592794879235.png',331.04),(6,'Bag - Regular Kraft 20 Lb','BGC Partners, Inc.',1,5,'Indonesia',35,32,'/images/productos/1592794885416.png',56.45),(7,'Cardamon Ground','Power Integrations, Inc.',2,1,'Poland',8,62,'/images/productos/1592794891874.png',459.12),(8,'Cup - 4oz Translucent','SPDR Dorsey Wright Fixed Income Allocation ETF',2,2,'Indonesia',49,54,'/images/productos/1592794897610.png',458.12),(9,'Baking Powder','Legg Mason BW Global Income Opportunities Fund Inc.',3,4,'Poland',35,63,'/images/productos/1592794903468.png',986.84),(10,'Soup - Knorr, Classic Can. Chili','New Senior Investment Group Inc.',3,5,'Sweden',30,99,'/images/productos/1592794909684.png',932.30),(11,'Pepper - Cubanelle','Public Storage',2,1,'Poland',26,93,'/images/productos/1592794915168.png',33.75);
+INSERT INTO `products` (`id`, `name`, `description`, `category_id`, `size_id`, `origin`, `alcohol`, `ibu`, `image_url`, `price`) VALUES (1,'Weidmann Hefetrüb 4','La Weidmann Hefetrüb es una cerveza de trigo que como toda Hefeweissbier no cuenta con la etapa de filtrado, dando ese aspecto turbio característico de este estilo. ',3,1,'Alemania',15,855,'/images/productos/1592794858610.png',200.00),(2,'Okcidenta 449 APA','Cerveza única de color dorado intenso y espuma blanca persistente. De cuerpo robusto e intensamente lupulada con las mejores variedades de Iúpulo del noroeste de EEUU',1,2,'Argentina',14,4,'/images/productos/1592794864507.png',120.00),(3,'Tart - Raisin And Pecan','Cerveza única de color dorado intenso y espuma blanca persistente. De cuerpo robusto e intensamente lupulada con las mejores variedades de Iúpulo del noroeste de EEUU',1,3,'China',24,26,'/images/productos/1592794870754.png',120.15),(4,'Buffalo - Striploin','Cerveza única de color dorado intenso y espuma blanca persistente. De cuerpo robusto e intensamente lupulada con las mejores variedades de Iúpulo del noroeste de EEUU\r\n4',1,3,'Senegal',14,43,'/images/productos/1592794836882.png',110.94),(5,'Cleaner - Lime Away','Cerveza única de color dorado intenso y espuma blanca persistente. De cuerpo robusto e intensamente lupulada con las mejores variedades de Iúpulo del noroeste de EEUU',3,4,'Honduras',19,69,'/images/productos/1592794879235.png',61.04),(6,'Bag - Regular Kraft 20 Lb','Cerveza única de color dorado intenso y espuma blanca persistente. De cuerpo robusto e intensamente lupulada con las mejores variedades de Iúpulo del noroeste de EEUU',1,5,'Indonesia',35,32,'/images/productos/1592794885416.png',56.45),(7,'Cardamon Ground','Cerveza única de color dorado intenso y espuma blanca persistente. De cuerpo robusto e intensamente lupulada con las mejores variedades de Iúpulo del noroeste de EEUU',2,1,'Poland',8,62,'/images/productos/1592794891874.png',93.12),(8,'Cup - 4oz Translucent','Cerveza única de color dorado intenso y espuma blanca persistente. De cuerpo robusto e intensamente lupulada con las mejores variedades de Iúpulo del noroeste de EEUUF',2,2,'Indonesia',49,54,'/images/productos/1592794897610.png',95.12),(9,'Baking Powder','Cerveza única de color dorado intenso y espuma blanca persistente. De cuerpo robusto e intensamente lupulada con las mejores variedades de Iúpulo del noroeste de EEUU',3,4,'Poland',35,63,'/images/productos/1592794903468.png',56.84),(10,'Soup - Knorr, Classic','Cerveza única de color dorado intenso y espuma blanca persistente. De cuerpo robusto e intensamente lupulada con las mejores variedades de Iúpulo del noroeste de EEUU',3,5,'Sweden',30,99,'/images/productos/1592794909684.png',79.30),(11,'Pepper - Cubanelle','Cerveza única de color dorado intenso y espuma blanca persistente. De cuerpo robusto e intensamente lupulada con las mejores variedades de Iúpulo del noroeste de EEUU',2,1,'Poland',26,93,'/images/productos/1592794915168.png',33.75);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -201,7 +209,7 @@ CREATE TABLE `users` (
   KEY `fk_user_provinces_idx` (`province_id`),
   CONSTRAINT `fk_user_category` FOREIGN KEY (`category_id`) REFERENCES `users_category` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_user_provinces` FOREIGN KEY (`province_id`) REFERENCES `provinces` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -210,7 +218,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `category_id`, `address`, `birthdate`, `image_url`, `city`, `province_id`, `zip`) VALUES (1,'Mauro','Asselborn','admin@beerstore.com','$2b$10$bzGGIx.2RS4Ro8tg4MuVt..4cowv4pRudzXFVFhdmP5Je0.u986m2',1,'Ricardo Rojas 242','1986-11-29','/images/usuarios/1592796692431.png','Campana',1,2804);
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `category_id`, `address`, `birthdate`, `image_url`, `city`, `province_id`, `zip`) VALUES (1,'Mauro','Asselborn','admin@beerstore.com','$2b$10$bzGGIx.2RS4Ro8tg4MuVt..4cowv4pRudzXFVFhdmP5Je0.u986m2',1,'Ricardo Rojas 242','1986-11-29','/images/usuarios/1592796692431.png','Campana',1,2804),(2,'Pepe','TheVerduler','pepe@beerstore.com','$2b$10$YhGdU1B8nljaRtroVLBdy.2QIN4ARtc13v1wa4VDnU9D1UsV5tP6y',2,'Ricardo Rojas 242','1986-11-29','/images/usuarios/1593378885097.jpg','Campana',1,2804),(11,'Segismundo','Embrici','sembrici@gmail.com','$2b$10$dUzd2JNkvlFqkP3Z3f0aMOxmHtthY8Gbke6LbeGwqRnZPYgpEWUQu',1,'av siempreviva 742','2020-06-03','/images/usuarios/1593378385605.png','Pacheco',1,1617);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -247,4 +255,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-22 22:59:51
+-- Dump completed on 2020-06-28 18:57:42

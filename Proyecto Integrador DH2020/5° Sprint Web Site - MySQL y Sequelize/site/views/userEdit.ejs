@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<!-- Include con ejs de todo el codigo en comun del head -->
+		<%- include('./partials/head.ejs') %>
+		<link rel="stylesheet" href="/stylesheets/register.css" />
+		<title>Editar | BeerStore</title>
+	</head>
+
+	<body>
+		<!-- Include del header.ejs -->
+		<%- include('./partials/header.ejs',{nombre,imageUsr,usr,usrId}) %>
+		<main class="container" style="margin-top: 20px;">
+			<% if(usr === 1){ %>
+			<form action="/user/usereditadm/<%= usuario.id %>?_method=PUT " method="POST">
+				<table border="1" style="text-align: center; width: 80%; margin: auto; margin-top: 20px;">
+					<tr>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Tipo de Usuario</th>
+						<th>Email</th>
+					</tr>
+					<tr>
+						<td><input name="first_name" type="text" value="<%= usuario.first_name %>" /></td>
+						<td><input name="last_name" type="text" value="<%= usuario.last_name %>" /></td>
+						<td>
+							<select name="category_id" id="category" class="form-control" required>
+								<option selected disabled>Elegir..</option>
+								<% for( let i = 0; i < userCategory.length; i++ ) { %> <% if
+								(usuario.category_id==userCategory[i].id) { %>
+								<option value="<%= userCategory[i].id %>" selected
+									><%= userCategory[i].name %>
+								</option>
+								<% }else{%>
+								<option value="<%= userCategory[i].id %>"><%= userCategory[i].name %> </option>
+								<% } %> <% } %>
+							</select>
+						</td>
+						<td><input name="email" type="text" value="<%= usuario.email %>" /></td>
+					</tr>
+				</table>
+				<button type="submit" class="btn btn-primary">Actualizar</button>
+			</form>
+
+			<% }else{ %>
+			<form
+				id="formRegister"
+				action="/user/usereditusr/<%= usuario.id %>?_method=PUT "
+				method="POST"
+				enctype="multipart/form-data"
+			>
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="inputName">Nombre</label>
+						<input
+							type="text"
+							class="form-control"
+							id="inputName"
+							placeholder="Ezequiel"
+							required
+							name="first_name"
+							value="<%= usuario.first_name %>"
+						/>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="inputLastName">Apellido</label>
+						<input
+							type="text"
+							class="form-control"
+							id="inputLastName"
+							placeholder="Salomon"
+							required
+							name="last_name"
+							value="<%= usuario.last_name %>"
+						/>
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="inputEmail">Email</label>
+						<input
+							type="email"
+							class="form-control"
+							id="inputEmail"
+							required
+							placeholder="eze@salomon.com"
+							name="email"
+							value="<%= usuario.email %>"
+						/>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="inputPassword">Password</label>
+						<input
+							type="password"
+							class="form-control"
+							id="inputPassword"
+							required
+							placeholder="12345"
+							name="password"
+						/>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="inputAddress">Direccion</label>
+						<input
+							type="text"
+							class="form-control"
+							id="inputAddress"
+							placeholder="Av. Siempreviva 742"
+							required
+							name="address"
+							value="<%= usuario.address %>"
+						/>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="inputDate">Fecha de Nacimiento</label>
+						<input
+							type="date"
+							class="form-control"
+							id="inputDate"
+							required
+							name="birthdate"
+							value="<%= usuario.birthdate %>"
+						/>
+					</div>
+				</div>
+				<div class="form-row align-items-center">
+					<div class="input-group col-md-8 m-auto">
+						<label class="mr-auto" for="inputFileAvatar">Agregar Avatar</label>
+						<div class="custom-file">
+							<input
+								type="file"
+								class="custom-file-input"
+								id="inputFileAvatar"
+								name="image_url"
+								value="<%= usuario.image_url %>"
+							/>
+							<label id="lblInputFile" class="custom-file-label" for="inputFileAvatar"
+								>Elegir Archivo</label
+							>
+						</div>
+					</div>
+					<div id="contenedor-avatar" class="col-md-2"></div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<label for="inputCity">Ciudad</label>
+						<input
+							type="text"
+							class="form-control"
+							id="inputCity"
+							required
+							placeholder="Campana"
+							name="city"
+							value="<%= usuario.city %>"
+						/>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputState">Provincia</label>
+						<select id="inputState" class="form-control" required name="province_id">
+							<option disabled selected>Elegir...</option>
+							<% for( let i = 0; i < provincias.length; i++ ) { %> <% if(provincias[i].id ===
+							usuario.provinces.id){%>
+							<option selected value="<%= provincias[i].id %>"><%= provincias[i].name %> </option>
+							<%} else {%>
+							<option value="<%= provincias[i].id %>"><%= provincias[i].name %> </option>
+							<%}%> <% } %>
+						</select>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputZip">CP</label>
+						<input
+							type="number"
+							class="form-control"
+							id="inputZip"
+							required
+							placeholder="2804"
+							name="zip"
+							value="<%= usuario.zip %>"
+						/>
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<button type="submit" id="btnSubmit" class="btn btn-primary">Actualizar</button>
+					</div>
+				</div>
+			</form>
+
+			<% } %>
+		</main>
+		<script src="/javascripts/register.js"></script>
+		<!-- Include del footer.ejs -->
+
+		<%- include('./partials/footer.ejs') %> <%- include('./partials/jsIncludes.ejs') %>
+	</body>
+</html>

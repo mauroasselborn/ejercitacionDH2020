@@ -58,8 +58,14 @@
 						<% } %> <% if (usr === 1) { %>
 
 						<a class="dropdown-item" href="/products/create"
-							><i class="fas fa-user-plus"></i> Create Product</a
+							><i class="fab fa-product-hunt"></i> Create Product</a
 						>
+						<a class="dropdown-item" href="/user"><i class="fas fa-user-plus"></i> Editar Usuarios</a>
+						<% } else if (usr === 2) {%>
+						<a class="dropdown-item" href="/user/useredit/<%= usrId %>"
+							><i class="fas fa-user-plus"></i> Editar Perfil</a
+						>
+
 						<% } %>
 					</div>
 				</li>

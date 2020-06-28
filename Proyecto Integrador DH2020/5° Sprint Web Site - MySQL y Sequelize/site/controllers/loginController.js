@@ -27,6 +27,7 @@ const loginController = {
 						req.session.login = true
 						req.session.usr = user.category_id
 						req.session.imageUsr = user.image_url
+						req.session.usrId = user.id
 					} else login = false
 				} else login = false
 
